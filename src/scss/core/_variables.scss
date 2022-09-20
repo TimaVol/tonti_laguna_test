@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap");
+
+$maxWidth: 1366;
+$minWidth: 320;
+
+$breakpoints: (
+  "phone": 400px,
+  "phone-wide": 480px,
+  "phablet": 560px,
+  "tablet-small": 640px,
+  "tablet": 768px,
+  "tablet-wide": 1024px,
+  "desktop": 1248px,
+  "desktop-wide": 1440px,
+);
+
+$z-indexes: (
+  "outdated-browser",
+  "modal",
+  "site-header",
+  "page-wrapper",
+  "site-footer"
+);
+
+$colors: (
+  "white": white,
+  "primary": #231D4F,
+  "secondary": #403879,
+  'textPrimary': #848199,
+  "gradient": linear-gradient(#f5f5fa, #f2dad5, #a0abd6),
+  "btnPrimary": #bb6bd9,
+  'btnHover': #A847CC,
+);
+
+$fonts: (
+  "primary": (
+    "Poppins",
+    sans-serif,
+  ),
+);
+
+$transition: (
+  "primary": (
+    all 300ms ease-out,
+  ),
+);

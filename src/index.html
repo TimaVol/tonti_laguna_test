@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    @@include('./components/header.html')
+
+    <main>
+      @@include('./components/plansAndPricing.html')
+
+      <div class="plans">
+        @@include('./components/plan.html', { 
+          "active": false,
+          "title":
+        "Starter", "subtitle": "Unleash the power of automation.",
+         "arr": [
+        "Multi-step Zaps", '3 Premium Apps', '2 Users team' ] })
+       
+       
+        @@include('./components/plan.html', 
+          { 
+          "active": false,
+          "title": "Professional",
+          "subtitle": "Advanced tools to take your work to the next level.",
+          "arr": [
+            "Multi-step Zaps",
+            'Unlimited Premium',
+            '50 Users team',
+            'Shared Workspace'
+            ]
+          }
+        )
+        
+        
+        
+        
+        @@include('./components/plan.html', {
+          "active": true,
+          "title": "Company",
+          "subtitle": "Automation plus enterprise-grade features.",
+
+          "arr": [ 
+              "Multi-step Zaps",
+              'Unlimited Premium',
+              'Unlimited Users Team',
+              'Advanced Admin',
+              'Custom Data Retention'
+            ]
+         })
+      </div>
+    </main>
+  </body>
+
+  <script>
+    const price = [
+      {monthly: '19', yearly: '12' },
+      {monthly: '54', yearly: '36' },
+      {monthly: '89', yearly: '56' },
+    ]
+
+    const prices = document.querySelectorAll('.plan .price .num')
+
+    prices.forEach((element, index) =>{
+      element.innerHTML = price[index].monthly
+    })
+    function switcher(element) {
+
+      if (!element.id) {
+        prices.forEach((element, index) =>{
+          element.innerHTML = price[index].yearly
+        })
+        return (element.id = "yearly");
+      }
+
+      prices.forEach((element, index) =>{
+        element.innerHTML = price[index].monthly
+      })
+
+      return (element.id = "");
+    }
+  </script>
+</html>

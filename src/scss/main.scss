@@ -1,0 +1,38 @@
+@use "core" as *;
+@use "./components/header.scss";
+@use "./components/plansAndPricing.scss";
+@use "./components/switcher.scss";
+@use "./components/plans.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: get($fonts, "primary");
+  font-weight: normal;
+}
+
+body {
+  height: 100vh;
+  background: get($colors, "gradient");
+
+  @include mq('tablet'){
+    height: auto;
+  }
+}
+
+.btn {
+  height: 44px;
+  border-radius: 50px;
+  border: none;
+  color: get($colors, "white");
+  background-color: get($colors, "btnPrimary");
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 13px;
+}

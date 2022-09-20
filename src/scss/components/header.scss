@@ -1,0 +1,20 @@
+@use "core" as *;
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 31px 50px;
+  @include mq("phablet") {
+    padding: 31px 24px;
+  }
+
+  .btn {
+    height: 38px;
+    width: 124px;
+    font-size: 14px;
+    
+    @include mq("phablet") {
+      display: none;
+    }
+  }
+}

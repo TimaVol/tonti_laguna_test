@@ -1,0 +1,55 @@
+@use "core" as *;
+
+.switcher {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  width: 220px;
+  padding-left: 26px;
+  padding-right: 28px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 50px;
+  background-color: get($colors, "white");
+  @include mq("tablet") {
+    margin: 0 auto;
+  }
+  &#yearly {
+    p {
+      color: get($colors, "white");
+
+      &:first-child {
+        color: get($colors, "primary");
+      }
+    }
+
+    .bg {
+      left: 50%;
+    }
+  }
+
+  p {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.83px;
+    z-index: 10;
+    color: get($colors, "primary");
+    transition: get($transition, "primary");
+
+    &:first-child {
+      color: get($colors, "white");
+    }
+  }
+
+  .bg {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    border-radius: 50px;
+    background-color: get($colors, "btnPrimary");
+    transition: get($transition, "primary");
+  }
+}

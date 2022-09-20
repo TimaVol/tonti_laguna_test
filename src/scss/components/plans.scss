@@ -1,0 +1,139 @@
+@use "core" as *;
+
+.plans {
+  display: flex;
+  justify-content: space-between;
+  height: 480px;
+  max-width: 937px;
+  width: 100%;
+  margin-bottom: 65px;
+  padding: 40px 45px;
+  border-radius: 26px;
+  background-color: get($colors, "white");
+  @include mq("tablet-wide") {
+    padding: 30px 20px;
+  }
+
+  @include mq("tablet") {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: auto;
+  }
+
+  @include mq("tablet-small") {
+    padding: 32px 8px 8px;
+  }
+
+  .plan {
+    height: max-content;
+    @include mq("tablet") {
+      margin-bottom: 48px;
+    }
+
+    &.active {
+      position: relative;
+      top: -55px;
+      padding: 20px 30px;
+      background-color: get($colors, "primary");
+      border-radius: 26px;
+      @include mq("tablet") {
+        top: 0;
+        margin-bottom: 0;
+      }
+      .mostPopular {
+        width: max-content;
+        padding: 7px 15px;
+        margin-left: auto;
+        border-radius: 50px;
+        font-size: 10px;
+        font-weight: 800;
+        color: get($colors, "btnPrimary");
+        background-color: get($colors, "secondary");
+      }
+
+      h4,
+      p {
+        color: get($colors, "white");
+      }
+
+      .price {
+        color: get($colors, "white");
+
+        span {
+          color: get($colors, "white");
+        }
+      }
+
+      .list {
+        p {
+          color: get($colors, "white");
+        }
+      }
+
+      .btn {
+        background-color: get($colors, "btnPrimary");
+      }
+    }
+
+    .price {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      color: get($colors, "primary");
+      font-size: 36px;
+      font-weight: 700;
+      .num {
+        margin-right: 4px;
+        font-weight: 700;
+      }
+
+      span {
+        font-size: 17px;
+        font-weight: 500;
+        color: get($colors, "textPrimary");
+      }
+    }
+
+    h4 {
+      margin-bottom: 16px;
+      color: get($colors, "primary");
+      font-weight: 500;
+      font-size: 28px;
+    }
+
+    .subtitle {
+      max-width: 217px;
+      margin-bottom: 14px;
+      font-size: 15px;
+      font-weight: 500;
+      color: get($colors, "textPrimary");
+    }
+
+    .list {
+      height: 145px;
+      margin-bottom: 23px;
+      p {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        color: get($colors, "textPrimary");
+        font-size: 15px;
+        font-weight: 500;
+
+        svg {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .btn {
+      width: 207px;
+      background-color: get($colors, "primary");
+      transition: get($transition, "primary");
+
+      &:hover {
+        background-color: get($colors, "btnHover");
+      }
+    }
+  }
+}
